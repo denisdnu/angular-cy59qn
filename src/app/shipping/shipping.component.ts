@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Observable } from 'rxjs';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -7,6 +9,10 @@ import { CartService } from '../cart.service';
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
+
+  constructor(
+    private cartService: CartService,
+  ){}
 
   shippingCosts!: Observable<{ type: string, price: number }[]>;
 
